@@ -33,6 +33,10 @@ I only tested it over connections of applications on my Android phone. So it is 
 	-p PASSWORD, --password PASSWORD
 							Keystore password.(default:123456)
 
+**Sample usage:**
+
+	java -jar mitmsocks4j.jar -l ERROR -s 5228 443 8883
+	
 ## About CA Certificate
 ``mitmsocks4j`` needs a CA certificate to forge remote server's certificate and signs it. So user should add this CA certificate to its trust store. Otherwise most of applications will drop the connection.(Browser may have an option to ask user to accept that certificate.)
 
@@ -43,6 +47,7 @@ In my case; Android does not have such an option(only supports HTTP proxy). So I
 TODO
 ----
 Not fully tested. Test it!
+
 Add BIND command support.
 
 License
