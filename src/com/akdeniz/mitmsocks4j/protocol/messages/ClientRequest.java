@@ -22,7 +22,7 @@ public class ClientRequest {
     public byte reserved;
     public AddressType addressType;
     public InetAddress destAddress;
-    public short destPort;
+    public int destPort;
 
     public ClientRequest() {
     }
@@ -80,7 +80,7 @@ public class ClientRequest {
 	    }
 
 	    if (in.remaining() >= 2) {
-		destPort = in.getShort();
+		destPort = in.getShort() & 0xffff;
 	    } else {
 		in.reset();
 		return false;

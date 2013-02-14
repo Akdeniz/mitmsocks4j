@@ -98,7 +98,7 @@ public class AcknowledgeMessage implements Encodable {
 	    }
 
 	    if (in.remaining() >= 2) {
-		port = in.getShort();
+		port = in.getShort() & 0xffff;
 	    } else {
 		in.reset();
 		return false;

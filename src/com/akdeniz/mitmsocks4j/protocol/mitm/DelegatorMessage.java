@@ -105,7 +105,7 @@ public class DelegatorMessage implements Encodable {
 	    }
 
 	    if (in.remaining() > 2) {
-		port = in.getShort();
+		port = in.getShort() & 0xffff;
 	    } else {
 		in.reset();
 		return false;
